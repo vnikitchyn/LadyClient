@@ -10,6 +10,12 @@ namespace LadyClient
     {
         static void Main(string[] args)
         {
+            var client = new LadyClient.BordelServiceClient("BasicHttpBinding IbordelApp");
+            var ladies = client.GetLadies();
+            foreach (var lady in ladies)
+            {
+                Console.WriteLine("Name: {0}\tAge: {1)", lady.Name, lady.Age);
+            }
         }
     }
 }
